@@ -85,6 +85,7 @@ class FieldTest {
         } catch (final InvalidPointException e) {}
     }
 
+/*
     @Test
     public void testGetFigureWhenPointXYIsAlreadyPointSet1() throws Exception { // тест на установку фигуры в не пустое поле
         final Field field = new Field();
@@ -110,5 +111,6 @@ class FieldTest {
             fail(); // если тест дойдет до данной строчки то тест завалится
         } catch (final AlreadyPointSetException e) {}
     }
+*/
 
 }
