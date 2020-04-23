@@ -21,12 +21,9 @@ public class Field {
         return field[point.x][point.y];             // возвращаем значение из массива field по индексу point.xn point.y
     }
 
-    public void setFigure(final Point point, final Figure figure) throws InvalidPointException, AlreadyPointSetException { // кладем фигуру на поле по поинту
+    public void setFigure(final Point point, final Figure figure) throws InvalidPointException { // кладем фигуру на поле по поинту
         if (!checkPointCoordinate(point)) {     // добавил эксепшен на проверку валиндности координаты в пределах поля
             throw new InvalidPointException();
-        }
-        if (field[point.x][point.y] != null) {  // если на point.x/y есть фигура то выкидываем эксепшен
-            throw new AlreadyPointSetException();
         }
         field[point.x][point.y] = figure;
     }
