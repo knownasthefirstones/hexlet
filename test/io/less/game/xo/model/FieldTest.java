@@ -85,4 +85,30 @@ class FieldTest {
         } catch (final InvalidPointException e) {}
     }
 
+    @Test
+    public void testGetFigureWhenPointXYIsAlreadyPointSet1() throws Exception { // тест на установку фигуры в не пустое поле
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, 0);
+        final Figure inputFigure = Figure.X;
+
+        field.setFigure(inputPoint, inputFigure);
+        try {
+            field.setFigure(inputPoint, inputFigure); // должен выскачить эксепшен иначе тест перейдет на строчку с fail()
+            fail(); // если тест дойдет до данной строчки то тест завалится
+        } catch (final AlreadyPointSetException e) {}
+    }
+
+    @Test
+    public void testGetFigureWhenPointXYIsAlreadyPointSet2() throws Exception { // тест на установку фигуры в не пустое поле
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, 0);
+        final Figure inputFigure = Figure.O;
+
+        field.setFigure(inputPoint, inputFigure);
+        try {
+            field.setFigure(inputPoint, inputFigure); // должен выскачить эксепшен иначе тест перейдет на строчку с fail()
+            fail(); // если тест дойдет до данной строчки то тест завалится
+        } catch (final AlreadyPointSetException e) {}
+    }
+
 }
