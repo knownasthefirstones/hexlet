@@ -1,5 +1,7 @@
 package io.less.game.xo.model;
 
+import io.less.game.xo.model.exceptions.AlreadyPointSetException;
+import io.less.game.xo.model.exceptions.InvalidPointException;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -18,7 +20,7 @@ class FieldTest {
     }
 
     @Test
-    void setFigure() {
+    void setFigure() throws AlreadyPointSetException, InvalidPointException {  // добавляем эксепшены так как они есть в методе в классе setFigure
         final Field field = new Field();                    // созадем поле
         final Point inputPoint = new Point(0, 0);     // создаем проинт по индексу 0, 0
         final Figure inputFigure = Figure.X;                // создаем фигуру
