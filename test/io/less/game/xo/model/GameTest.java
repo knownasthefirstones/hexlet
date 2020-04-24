@@ -18,7 +18,7 @@ class GameTest {
 
     @Test
     void getField() throws Exception {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Game game = new Game(null, field, null);
 
     }
