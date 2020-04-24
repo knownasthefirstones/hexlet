@@ -8,7 +8,8 @@ class GameTest {
 
     @Test
     void getPlayers() throws Exception {
-        Player[] inputPlayer = new Player[1];
+        final Figure inputFigure = Figure.X;
+        final Player[] inputPlayer = new Player[1];
         final Game game = new Game(inputPlayer, null, null);
         final Player[] returnPlayer = game.getPlayers();
 
@@ -19,6 +20,7 @@ class GameTest {
     void getField() throws Exception {
         final Field field = new Field();
         final Game game = new Game(null, field, null);
+
     }
 
     @Test
