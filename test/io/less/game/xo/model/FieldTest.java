@@ -12,7 +12,7 @@ class FieldTest {
 
     @Test
     void getFieldSize() throws Exception {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final int expectedValue = 3;
         final int returnValue = field.getFieldSize();
 
@@ -21,7 +21,7 @@ class FieldTest {
 
     @Test
     void setFigure() throws AlreadyPointSetException, InvalidPointException {  // добавляем эксепшены так как они есть в методе в классе setFigure
-        final Field field = new Field();                    // созадем поле
+        final Field field = new Field(3);                    // созадем поле
         final Point inputPoint = new Point(0, 0);     // создаем проинт по индексу 0, 0
         final Figure inputFigure = Figure.X;                // создаем фигуру
 
@@ -33,7 +33,7 @@ class FieldTest {
 
     @Test
     public void testGetFigureWhenFigureIsNotSet() throws Exception { // тест если фигура не установлена, тоесть поле пустое null
-        final Field field = new Field();                             // создаем объект поля
+        final Field field = new Field(3);                             // создаем объект поля
         final Point inputPoint = new Point(0, 0);              // задаем значение поинта x y
         final Figure returnFigure = field.getFigure(inputPoint);     // получаем значение поля по указателю поинт
 
@@ -43,7 +43,7 @@ class FieldTest {
 
     @Test
     public void testGetFigureWhenPointXIsNotCorrect1() throws Exception {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(-1, 0);
 
         try {
@@ -54,7 +54,7 @@ class FieldTest {
 
     @Test
     public void testGetFigureWhenPointXIsNotCorrect2() throws Exception {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(field.getFieldSize() + 1, 0);
 
         try {
@@ -65,7 +65,7 @@ class FieldTest {
 
     @Test
     public void testGetFigureWhenPointYIsNotCorrect1() throws Exception {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(0, -1);
 
         try {
@@ -76,7 +76,7 @@ class FieldTest {
 
     @Test
     public void testGetFigureWhenPointYIsNotCorrect2() throws Exception {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final Point inputPoint = new Point(0, field.getFieldSize() + 1);
 
         try {
